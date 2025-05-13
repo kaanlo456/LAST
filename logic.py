@@ -1,14 +1,19 @@
-from config import DATABASE
-from config import TOKEN
 import sqlite3
-import random
-
+import os
+from config import DATABASE
 DB_PATH = DATABASE
 
 def get_connection():
+    if not os.path.exists(DB_PATH):
+        raise FileNotFoundError(f"Veritabanı dosyası bulunamadı: {DB_PATH}")
     return sqlite3.connect(DB_PATH)
 
-def get_random_recommendation(category=None, type=None):
+def get_random_recommendation(category=None, media_type=None):
+    """
+    large_database.db veritabanından rastgele bir film, dizi ya da belgesel önerir.
+    İsteğe bağlı olarak kategori ve tür filtreleri uygulanabilir.
+    """
+
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -17,12 +22,12 @@ def get_random_recommendation(category=None, type=None):
     params = []
 
     if category:
-        conditions.append("category = ?")
+        conditions.append("LOWER(category) = ?")
         params.append(category.lower())
 
-    if type:
-        conditions.append("type = ?")
-        params.append(type.lower())
+    if media_type:
+        conditions.append("LOWER(type) = ?")
+        params.append(media_type.lower())
 
     if conditions:
         query += " WHERE " + " AND ".join(conditions)
@@ -34,7 +39,14 @@ def get_random_recommendation(category=None, type=None):
     conn.close()
 
     if result:
-        title, t, category = result
-        return f"🎬 Öneri: **{title}**\nTür: {t.title()}, Kategori: {category.title()}"
+        title, mtype, category = result
+        return f"🎬 Öneri: {title}\n📺 Tür: {mtype.title()}\n🎭 Kategori: {category.title()}"
     else:
-        return "Bu kriterlere uygun bir içerik bulunamadı."
+        return "❌ Uygun içerik bulunamadı."
+
+# Test için çalıştırıldığında birkaç örnek öneri üretir
+if __name__ == "__main__":
+    print(get_random_recommendation())  # Rastgele öneri
+    print(get_random_recommendation(media_type="dizi"))  # Sadece dizilerden
+    print(get_random_recommendation(category="komedi"))  # Sadece komedi
+    print(get_random_recommendation(category="bilim kurgu", media_type="film"))  # Bilim kurgu filmleri
