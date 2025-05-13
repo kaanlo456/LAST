@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from config import TOKEN, DATABASE
+from logic import *
 
 # Bot için niyetleri (intents) ayarlama
 intents = discord.Intents.default()  # Varsayılan ayarların alınması
@@ -15,8 +16,73 @@ async def on_ready():
 
 @bot.command
 async def film(ctx):
-    pass
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def bilim(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def komedi(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def suc(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def tarih(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def tarihi(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def animasyon(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def gerilim(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def romantik(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def savas(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def fantastik(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def belgesel(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def aksiyon(ctx):
+    await ctx.send(get_random_recommendation())
 
 @bot.command
 async def korku(ctx):
-    pass
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def macera(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def gizem(ctx):
+    await ctx.send(get_random_recommendation())
+
+@bot.command
+async def dram(ctx):
+    await ctx.send(get_random_recommendation())
+
+
+
+
+
