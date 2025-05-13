@@ -13,4 +13,10 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def on_ready():
     print(f'Giriş yapıldı:  {bot.user.name}')  # Botun adını konsola çıktı olarak verir
 
+@bot.command
+async def film(ctx):
+    pass
 
+@bot.command
+async def korku(ctx):
+    pass
