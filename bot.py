@@ -19,68 +19,170 @@ async def film(ctx):
     await ctx.send(get_random_recommendation())
 
 @bot.command
-async def bilim(ctx):
+async def fbilim(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fkomedi(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fsuc(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def ftarih(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def ftarihi(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fanimasyon(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fgerilim(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fromantik(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fsavas(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def ffantastik(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fbelgesel(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def faksiyon(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fkorku(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fmacera(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fgizem(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def fdram(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def dizi(ctx):
     await ctx.send(get_random_recommendation())
 
 @bot.command
-async def komedi(ctx):
-    await ctx.send(get_random_recommendation())
+async def dbilim(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def suc(ctx):
-    await ctx.send(get_random_recommendation())
+async def dkomedi(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def tarih(ctx):
-    await ctx.send(get_random_recommendation())
+async def dsuc(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def tarihi(ctx):
-    await ctx.send(get_random_recommendation())
+async def dtarih(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def animasyon(ctx):
-    await ctx.send(get_random_recommendation())
+async def dtarihi(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def gerilim(ctx):
-    await ctx.send(get_random_recommendation())
+async def danimasyon(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def romantik(ctx):
-    await ctx.send(get_random_recommendation())
+async def dgerilim(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def savas(ctx):
-    await ctx.send(get_random_recommendation())
+async def dromantik(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def fantastik(ctx):
-    await ctx.send(get_random_recommendation())
+async def dsavas(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def belgesel(ctx):
-    await ctx.send(get_random_recommendation())
+async def dfantastik(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def aksiyon(ctx):
-    await ctx.send(get_random_recommendation())
+async def dbelgesel(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def korku(ctx):
-    await ctx.send(get_random_recommendation())
+async def daksiyon(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def macera(ctx):
-    await ctx.send(get_random_recommendation())
+async def dkorku(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def gizem(ctx):
-    await ctx.send(get_random_recommendation())
+async def dmacera(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
-async def dram(ctx):
-    await ctx.send(get_random_recommendation())
+async def dgizem(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def ddram(ctx):
+    await ctx.send(get_random_recommendation(media_type="film"))
+
+@bot.command
+async def info(ctx):
+    await ctx.send('''Thank you for running this bot.\n
+                   Bu botu çalıştırdığınız için teşekkürler.\n
+                   !devs - List of developers.\n
+                   Yapımcılar.\n
+                   !film - This command gives you a random reccomandations based on films.\n
+                   Bu komut rastgele filmler önerir.\n
+                   !(type)(category) - This command gives you recommendations about (category)(type)\n
+                   Bu komut (category=kategori)(type=tip) hakkında öneri verir.\n
+                   categorys-kategoriler\n
+                   !(type)bilim/sci-fi/bilim kurgu\n
+                   !(type)komedi/comedy/komedi\n
+                   !(type)suc/crime/suç\n
+                   !(type)tarih/history/tarih
+                   !(type)animasyon/animation/animasyon\n
+                   !(type)gerilim/thriller/gerilim\n
+                   !(type)romantik/romantic/romantik\n
+                   !(type)savas/war/savaş\n
+                   !(type)fantastik/fantastic/fantastik\n
+                   !(type)belgesel/documentary/belgesel\n
+                   !(type)aksiyon/action/aksiyon\n
+                   !(type)korku/scary/korku\n
+                   !(type)macera/adventure/macera\n
+                   !(type)gizem/mistery/gizem\n
+                   !(type)dram/drama/dram\n
+                   Types - Tipler:\n
+                   f = films - filmler\n
+                   d = series - diziler
+                   ''')
+
+if __name__ == "__main__":
+    bot.run(TOKEN)
 
 
 
