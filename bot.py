@@ -151,11 +151,15 @@ async def ddram(ctx):
     await ctx.send(get_random_recommendation(media_type="film"))
 
 @bot.command
+async def devs(ctx):
+    await ctx.send("kaanlo456 - https://github.com/kaanlo456 \n YusufTGNS - https://github.com/YusufTGNS")
+
+@bot.command
 async def info(ctx):
     await ctx.send('''Thank you for running this bot.\n
                    Bu botu çalıştırdığınız için teşekkürler.\n
                    !devs - List of developers.\n
-                   Yapımcılar.\n
+                   Yapımcılar listesi.\n
                    !film - This command gives you a random reccomandations based on films.\n
                    Bu komut rastgele filmler önerir.\n
                    !(type)(category) - This command gives you recommendations about (category)(type)\n
